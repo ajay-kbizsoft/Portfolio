@@ -4,10 +4,14 @@ import { Hero } from "@/components/sections/Hero";
 import { Skills } from "@/components/sections/Skills";
 import { Projects } from "@/components/sections/Projects";
 import { Contact } from "@/components/sections/Contact";
+import { MotionConfig, motion, useScroll } from "framer-motion";
 
 export default function Home() {
+  const { scrollYProgress } = useScroll();
   return (
+    <MotionConfig reducedMotion="user">
     <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <motion.div aria-hidden="true" className="scroll-progress" style={{ scaleX: scrollYProgress }} />
       <Hero />
       <Skills />
       <Projects />
@@ -21,5 +25,6 @@ export default function Home() {
         </p>
       </footer>
     </main>
+    </MotionConfig>
   );
 }

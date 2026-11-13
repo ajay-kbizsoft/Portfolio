@@ -92,8 +92,15 @@ export function Projects() {
             <Card key={index} delay={index * 0.1}>
               <div className="h-full flex flex-col">
                 {/* Project Image/Gradient */}
-                <div className={`h-48 bg-gradient-to-br ${project.image} relative overflow-hidden`}>
+                <div className={`project-art h-48 bg-gradient-to-br ${project.image} relative overflow-hidden rounded-t-2xl`}>
                   <div className="absolute inset-0 bg-black/20" />
+                  <div className="project-window" aria-hidden="true">
+                    <div className="window-toolbar"><i /><i /><i /><span>{project.tags[0]}</span></div>
+                    <div className={`window-preview preview-${index % 3}`}>
+                      <div className="preview-sidebar"><i /><i /><i /></div>
+                      <div className="preview-content"><div className="preview-heading" /><div className="preview-tiles"><i /><i /><i /></div><div className="preview-line" /><div className="preview-line short" /></div>
+                    </div>
+                  </div>
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"
                     initial={{ opacity: 0 }}

@@ -52,7 +52,7 @@ export function Contact() {
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Contact Form */}
-          <Card delay={0.1}>
+          <Card delay={0.1} interactive={false}>
             <div className="p-8">
               <div className="flex items-center gap-3 mb-6">
                 <MessageSquare className="w-6 h-6 text-blue-400" />
